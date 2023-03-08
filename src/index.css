@@ -1,0 +1,89 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+@layer components {
+    .open-boxes {
+        @apply flex flex-row bg-white flex-nowrap w-full mx-auto shadow-md  p-3 rounded-md border border-gray-300;
+    }
+    .open-link {
+        @apply inline-flex text-blue-600 font-semibold text-xs hover:underline;
+    }
+    .open-btn {
+        @apply inline-flex px-5 py-2 justify-center items-center flex-nowrap font-medium text-white rounded-md transition hover:cursor-pointer hover:bg-blue-700 active:bg-blue-600 bg-blue-500;
+    }
+    .open-btn-green {
+        @apply open-btn bg-green-500 hover:bg-green-700 active:bg-green-600;
+    }
+    .open-btn-teal {
+        @apply open-btn bg-teal-500 hover:bg-teal-700 active:bg-teal-600;
+    }
+}
+
+#root:has(> .open-box) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(245, 249, 252);
+    overflow: auto;
+}
+#root > .open-box {
+    padding: 10px;
+    gap: 12px;
+    max-width: 1024px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    min-height: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 1em;
+    height: 1em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #828c9f;
+    background-clip: padding-box;
+    border: 0.26em solid transparent;
+    border-radius: 0.5em;
+    box-shadow: none;
+    min-height: 4em;
+    min-width: 4em;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track:hover {
+    background: none;
+    border: none;
+}
+
+.contextmenu {
+    border: 1px solid #d3d3e7;
+    border-radius: 0.5em;
+    background: #fff;
+    box-shadow: 0 0 5px 3px #0002;
+}
+
+.contextmenuitem {
+    background: #fff;
+    color: #727888;
+    font-weight: 600 !important;
+    padding: 1em 1.33em !important;
+    gap: 1.33em;
+}
+
+.contextmenuitem:hover {
+    color: #323555;
+    background: #e4e8ee;
+}
+
+.contextmenuitem:active {
+    color: #323555;
+    background: #edf1f6;
+}
